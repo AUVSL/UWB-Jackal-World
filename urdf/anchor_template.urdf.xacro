@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<xacro:macro name="uwb_anchor" params="id link_name">        
+    <xacro:property name="anchor_name" value="uwb_anchor${id}"/>
+
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/uwb_anchor0</robotNamespace>
+        </plugin>
+    </gazebo>
+
+    <gazebo>
+        <plugin name='libgtec_uwb_plugin' filename='libgtec_uwb_plugin.so'>
+            <update_rate>25</update_rate>
+            <nlosSoftWallWidth>0.25</nlosSoftWallWidth>
+            <tag_z_offset>1.5</tag_z_offset>
+            <tag_link value="${anchor_name}"/>
+            <anchor_prefix>uwb_anchor</anchor_prefix>
+            <all_los>false</all_los>
+            <tag_id>${id}</tag_id>
+        </plugin>
+    </gazebo>
+
+    <link name="${anchor_name}">
+        <inertial>
+            <mass value="1" />
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+        </inertial>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.01 0.01 0.01"/>  <!-- To be modified -->
+            </geometry>
+        </collision>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://jackal_world/models/DecaWave/meshes/Decawave.stl"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <gazebo reference="${anchor_name}">
+        <material>Gazebo/White</material>
+    </gazebo>
+</xacro:macro>   

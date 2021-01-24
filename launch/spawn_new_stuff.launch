@@ -1,0 +1,20 @@
+<launch>
+    <include file="$(find jackal_gazebo)/launch/empty_world.launch">
+        <arg name="joystick" value="false"/>
+    </include>
+
+
+    <arg name="tf_prefix" default="uwb_anchor0"/>
+
+    <group ns="$(arg tf_prefix)">
+
+        <include file="$(find jackal_world)/launch/spawn_beacon.launch">
+            <arg name="id" value="0"/>
+        </include>
+
+        <node pkg="tf" type="static_transform_publisher" 
+        name="becon_to_base" 
+        args="0 0 0 0 0.0 0 mid_mount $(arg tf_prefix)/base_link 100"/>
+    </group>
+
+</launch>

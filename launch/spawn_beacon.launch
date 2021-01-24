@@ -1,0 +1,17 @@
+<launch>
+    <arg name="x" default="0.0" />
+    <arg name="y" default="0.0" />
+    <arg name="z" default="0.0" />
+    <arg name="id" default="" />
+
+    <param name="robot_description" command="$(find xacro)/xacro '$(find jackal_world)/urdf/anchor_template.urdf.xacro'" />
+
+    <node name="spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-urdf -x $(arg x) -y $(arg y) -z $(arg z) -model uwb_anchor$(arg id) -param robot_description"/> 
+    
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+        respawn="false" output="screen">
+        <remap from="/joint_states" to="/uwb_anchor$(arg id)/joint_states" />
+    </node> 
+</launch>
