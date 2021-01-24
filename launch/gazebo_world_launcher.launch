@@ -1,8 +1,17 @@
 <launch>
-    <include file="$(find gazebo_ros)/launch/empty_world.launch">
-        <arg name="world_name" value="$(find jackal_world)/worlds/simple_world.world"/>
-        <arg name="gui" value="true"/>
-        <arg name="use_sim_time" value="true"/>
-        <arg name="verbose" value="true"/>
+    <include file="$(find jackal_world)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find jackal_world)/worlds/test_world.world"/>
+        <arg name="joystick" value="false"/>
     </include>
+
+  <node name="genericrangingfixer" output="screen" pkg="gtec_rostoa" type="genericrangingfixer" launch-prefix="">
+        <param name="useCustomBiasFix" type="bool" value="true" />
+        <param name="numAnchors" type="int" value="6" />
+        <param name="customBiasFixMode" type="int" value="1" />
+        <param name="cableLength" type="double" value="0.0" />
+        <param name="tableBiasLOS" value="$(find gtec_rostoa)/src/rostoa/config/tableBiasLOS.csv"></param>
+        <param name="tableBiasLOSError" value="$(find gtec_rostoa)/src/rostoa/config/tableBiasLOSError.csv"></param>
+        <param name="tableBiasNLOSFP" value="$(find gtec_rostoa)/src/rostoa/config/tableBiasNLOSFP.csv"></param>
+        <param name="tableBiasNLOSFPError" value="$(find gtec_rostoa)/src/rostoa/config/tableBiasNLOSFPError.csv"></param>
+  </node>
 </launch>
