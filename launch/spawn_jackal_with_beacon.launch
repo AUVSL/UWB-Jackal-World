@@ -1,24 +1,24 @@
 <launch>
+  <arg name="x" default="0" />
+  <arg name="y" default="0" />
+  <arg name="z" default="1" />
+  <arg name="yaw" default="0" />
+  <arg name="joystick" default="true" />
 
-    <include file="$(find jackal_gazebo)/launch/empty_world.launch">
-        <arg name="joystick" value="false"/>
-    </include>
-    
+  <!-- Configuration of Jackal which you would like to simulate.
+       See jackal_description for details. -->
+  <arg name="config" default="base" />
 
-    <group ns="uwb_anchor0">
-    <param name="robot_description" command="$(find xacro)/xacro '$(find jackal_world)/urdf/anchor.urdf.xacro'" />
-    <node name="uwb_anchor0_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-    args="-urdf -x 0 -y 0 -z 0  -model uwb_anchor0 -param robot_description"/> 
-    
+  <!-- Load Jackal's description, controllers, and teleop nodes. -->
+  <include file="$(find jackal_world)/launch/description.launch">
+    <arg name="config" value="$(arg config)" />
+  </include>
+  <include file="$(find jackal_control)/launch/control.launch" />
+  <include file="$(find jackal_control)/launch/teleop.launch">
+    <arg name="joystick" value="$(arg joystick)" />
+  </include>
 
-    <node name="uwb_anchor0_robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
-        respawn="false" output="screen" ns="uwb_anchor0">
-        <remap from="/uwb_anchor0/uwb_anchor0/joint_states" to="/uwb_anchor0/joint_states" />
-    </node> 
-    </group>
-
-      <!-- <node pkg="tf" type="static_transform_publisher" name="jackal_connection" 
-          args="0 0 0 0 0 0 /base_link /uwb_anchor0/base_link 1">
-    </node> -->
-    
+  <!-- Spawn Jackal -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
+              args="-urdf -model jackal -param robot_description -x $(arg x) -y $(arg y) -z $(arg z) -R 0 -P 0 -Y $(arg yaw)" />
 </launch>

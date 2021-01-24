@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="firefighter">
+    <xacro:include filename="$(find jackal_description)/urdf/jackal.urdf.xacro" />
+
+    <link name="right_tag">
+        <inertial>
+            <mass value="1" />
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+        </inertial>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.01 0.01 0.01"/>
+            </geometry>
+        </collision>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://jackal_world/models/DecaWave/meshes/Decawave.stl"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="right_tag_joint" type="fixed">
+        <!-- <origin xyz="0.161786 0 0.2378375000000002" rpy="0 0 0"/> -->
+        <origin xyz="0 0.161786 0" rpy="0 0 3.14159265359"/>
+        <parent link="mid_mount"/>
+        <child link="right_tag"/>
+     </joint>
+
+    <gazebo reference="right_tag">
+        <material>Gazebo/White</material>
+    </gazebo>
+
+    
+    <link name="left_tag">
+        <inertial>
+            <mass value="1" />
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+        </inertial>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.01 0.01 0.01"/>
+            </geometry>
+        </collision>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://jackal_world/models/DecaWave/meshes/Decawave.stl"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="left_tag_joint" type="fixed">
+        <!-- <origin xyz="0.161786 0 0.2378375000000002" rpy="0 0 0"/> -->
+        <origin xyz="0 -0.161786 0" rpy="0 0 0"/>
+        <parent link="mid_mount"/>
+        <child link="left_tag"/>
+     </joint>
+
+    <gazebo reference="left_tag">
+        <material>Gazebo/White</material>
+    </gazebo>
+
+    <gazebo>
+        <plugin name='libgtec_uwb_plugin' filename='libgtec_uwb_plugin.so'>
+            <update_rate>10</update_rate>
+            <frequency>3.9936e9</frequency>
+            <power>-14.3</power>
+            <rx_gain>2</rx_gain>
+            <tag_link>right_tag</tag_link>
+            <anchor_prefix>uwb_anchor</anchor_prefix>
+            <tag_id>0</tag_id>
+            <noise type='gaussian'>
+                <mean>0</mean>
+                <stddev>0.0208</stddev>
+            </noise>
+        </plugin>
+    </gazebo>
+
+    <gazebo>
+        <plugin name='libgtec_uwb_plugin' filename='libgtec_uwb_plugin.so'>
+            <update_rate>10</update_rate>
+            <frequency>3.9936e9</frequency>
+            <power>-14.3</power>
+            <rx_gain>2</rx_gain>
+            <tag_link>left_tag</tag_link>
+            <anchor_prefix>uwb_anchor</anchor_prefix>
+            <tag_id>1</tag_id>
+            <noise type='gaussian'>
+                <mean>0</mean>
+                <stddev>0.0208</stddev>
+            </noise>
+        </plugin>
+    </gazebo>
+</robot>
