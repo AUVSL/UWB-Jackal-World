@@ -7,18 +7,6 @@
       <real_time_update_rate>50</real_time_update_rate>
     </physics>
 
-
-    <model name="jackal">
-      
-
-
-      <include>
-        <uri>model://UWBTag</uri>
-        <pose>0 0 0 0 0 0</pose>
-      </include>
-    </model>
-
-
     <model name="uwb_anchor0">
       <pose>0 0 2.44 0 0 0</pose>
       <static>1</static>
