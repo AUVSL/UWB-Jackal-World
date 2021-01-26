@@ -5,6 +5,7 @@
     <link name="right_tag">
         <inertial>
             <mass value="0.1" />
+            <origin rpy="0 0 0" xyz="0 0 0"/>
             <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
         </inertial>
 
@@ -23,20 +24,25 @@
     </link>
 
     <joint name="right_tag_joint" type="fixed">
-        <!-- <origin xyz="0.161786 0 0.2378375000000002" rpy="0 0 0"/> -->
-        <origin xyz="0 0.161786 0" rpy="0 0 3.14159265359"/>
-        <parent link="mid_mount"/>
+        <origin xyz="0 0.161786 0.184" rpy="0 0 3.14159265359"/>
+        <!-- <origin xyz="0 0.161786 0" rpy="0 0 3.14159265359"/> -->
+        <parent link="base_link"/>
         <child link="right_tag"/>
-     </joint>
+    </joint>
+
+    <gazebo reference="right_tag_joint">
+        <preserveFixedJoint>true</preserveFixedJoint>
+    </gazebo>
 
     <gazebo reference="right_tag">
         <material>Gazebo/White</material>
     </gazebo>
 
-    
+
     <link name="left_tag">
         <inertial>
             <mass value="0.1" />
+            <origin rpy="0 0 0" xyz="0 0 0"/>
             <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
         </inertial>
 
@@ -55,11 +61,15 @@
     </link>
 
     <joint name="left_tag_joint" type="fixed">
-        <!-- <origin xyz="0.161786 0 0.2378375000000002" rpy="0 0 0"/> -->
-        <origin xyz="0 -0.161786 0" rpy="0 0 0"/>
-        <parent link="mid_mount"/>
+        <origin xyz="0 -0.161786 0.184" rpy="0 0 0"/>
+        <!-- <origin xyz="0 -0.161786 0" rpy="0 0 0"/> -->
+        <parent link="base_link"/>
         <child link="left_tag"/>
-     </joint>
+    </joint>
+
+    <gazebo reference="left_tag_joint">
+        <preserveFixedJoint>true</preserveFixedJoint>
+    </gazebo>
 
     <gazebo reference="left_tag">
         <material>Gazebo/White</material>
