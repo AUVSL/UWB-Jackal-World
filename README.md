@@ -4,12 +4,12 @@
     <a href="https://github.com/Marius-Juston/UWB-Jackal-World/graphs/contributors" alt="Contributors">
         <img src="https://img.shields.io/github/contributors/Marius-Juston/UWB-Jackal-World" /></a>
     <a href="https://github.com/Marius-Juston/UWB-Jackal-World/pulse" alt="Activity">
-        <img src="https://img.shields.io/github/commit-activity/m/Marius-Juston/UWB-Jackal-World" /></a>
+        <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/Marius-Juston/UWB-Jackal-World"></a>
     <a href="https://github.com/Marius-Juston/UWB-Jackal-World/stargazers">
         <img alt="Stars" src="https://img.shields.io/github/stars/Marius-Juston/UWB-Jackal-World"></a>
-    <a href="https://github.com/Marius-Juston/UWB-Jackal-World/stargazers">
+    <a href="https://github.com/Marius-Juston/UWB-Jackal-World/network/members">
         <img alt="Forks" src="https://img.shields.io/github/forks/Marius-Juston/UWB-Jackal-World"></a>
-    <a href="https://img.shields.io/github/forks/Marius-Juston/UWB-Jackal-World">
+    <a href="https://github.com/Marius-Juston/UWB-Jackal-World/issues">
         <img alt="Issues" src="https://img.shields.io/github/issues/Marius-Juston/UWB-Jackal-World"></a>
     <a href="./LICENSE" alt="Activity">
         <img alt="GitHub" src="https://img.shields.io/github/license/Marius-Juston/UWB-Jackal-World"></a>
