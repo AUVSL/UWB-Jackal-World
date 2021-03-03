@@ -37,16 +37,19 @@ To setup:
 
 1. Either create a catkin workspace or navigate to the `src` folder
 2. ```git clone git@github.com:Marius-Juston/UWB-Jackal-World.git```
-3. Create a `gtec` folder in your `catkin_ws/src` folder
-4. Navigate to your `catkin_ws/src/gtec` folder
-5. `git clone https://github.com/valentinbarral/gazebosensorplugins.git`
+3. `sudo apt-get install ros-melodic-jackal-simulator ros-melodic-jackal-desktop ros-melodic-jackal-navigation`
+   - This will install all the necessary melodic packages for the Jackal as well as its base model
+   - For more detailed instuctions on the Jackal API: https://www.clearpathrobotics.com/assets/guides/melodic/jackal/simulation.html
+4. Create a `gtec` folder in your `catkin_ws/src` folder
+5. Navigate to your `catkin_ws/src/gtec` folder
+6. `git clone https://github.com/valentinbarral/gazebosensorplugins.git`
    - This installs the UWB plugin library which allows for the tags and anchors to send values
-6. `git clone https://github.com/valentinbarral/rosmsgs`
+7. `git clone https://github.com/valentinbarral/rosmsgs`
    - This installs the custom UWB ranging messages
-7. Navigate to your base `cakin_ws` folder
-8. `rospack profile`
-9. `catkin_make`
-10. `source ~/catkin_ws/devel/setup.bash`
+8. Navigate to your base `cakin_ws` folder
+9.  `rospack profile`
+10. `catkin_make`
+11. `source ~/catkin_ws/devel/setup.bash`
    -  This step is very important. Be sure to run this every time you open up a new terminal. If you do not you will get errors when trying to run the world, that you cannot see certain packages.
    -  To make things easier if you only have a single ROS build and  `catkin_ws`, then you can run: 
    - `echo "source ~/catkin_ws/devel/setup.bash" > ~/.bashrc`
