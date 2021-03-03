@@ -3,29 +3,4 @@
     <arg name="world_name" value="$(find jackal_world)/worlds/simple_world.world"/>
     <arg name="joystick" value="false"/>
   </include>
-
-  <node pkg="gtec_gazebo2ros" type="gazebo2ros" name="gazebo2ros">
-    <param name="pub_topic_px4flow" value="/gtec/gazebo/px4flow" type="str"></param>
-    <param name="pub_topic_imu" value="/gtec/gazebo/erle/imu" type="str"></param>
-    <param name="pub_topic_mag" value="/gtec/gazebo/erle/mag" type="str"></param>
-    <param name="pub_topic_mag_int" value="/gtec/gazebo/erle/maginterfered" type="str"></param>
-
-    <param name="sub_gz_optical_flow" value="/gazebo/default/forklift_full/camera/link/opticalFlow" type="str"></param>
-    <param name="sub_gz_optical_flow_imu" value="/gazebo/default/forklift_full/camera/link/px4_imu/imu" type="str"></param>
-    <param name="sub_gz_imu" value="/gazebo/default/forklift_full/forkliftSensors/link_erle/erle_imu/imu" type="str"></param>
-    <param name="sub_gz_mag" value="/gazebo/default/forklift_full/forkliftSensors/link_erle/erle_magnetometer" type="str"></param>
-    <param name="sub_gz_mag_int" value="/gazebo/default/forklift_full/forkliftSensors/link_erle/erle_magnetometer/interfered" type="str"></param>
-
-  </node>
-
-  <node name="genericrangingfixer" output="screen" pkg="gtec_rostoa" type="genericrangingfixer" launch-prefix="">
-    <param name="useCustomBiasFix" type="bool" value="true" />
-    <param name="numAnchors" type="int" value="6" />
-    <param name="customBiasFixMode" type="int" value="1" />
-    <param name="cableLength" type="double" value="0.0" />
-    <param name="tableBiasLOS" value="$(find gtec_rostoa)/src/rostoa/config/tableBiasLOS.csv"></param>
-    <param name="tableBiasLOSError" value="$(find gtec_rostoa)/src/rostoa/config/tableBiasLOSError.csv"></param>
-    <param name="tableBiasNLOSFP" value="$(find gtec_rostoa)/src/rostoa/config/tableBiasNLOSFP.csv"></param>
-    <param name="tableBiasNLOSFPError" value="$(find gtec_rostoa)/src/rostoa/config/tableBiasNLOSFPError.csv"></param>
-  </node>
 </launch>
