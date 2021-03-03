@@ -1,5 +1,20 @@
 # Gazebo Jackal Ultra-wideband Environment
 
+<p align="center">
+    <a href="https://github.com/Marius-Juston/UWB-Jackal-World/graphs/contributors" alt="Contributors">
+        <img src="https://img.shields.io/github/contributors/Marius-Juston/UWB-Jackal-World" /></a>
+    <a href="https://github.com/Marius-Juston/UWB-Jackal-World/pulse" alt="Activity">
+        <img src="https://img.shields.io/github/commit-activity/m/Marius-Juston/UWB-Jackal-World" /></a>
+    <a href="https://github.com/Marius-Juston/UWB-Jackal-World/stargazers">
+        <img alt="Stars" src="https://img.shields.io/github/stars/Marius-Juston/UWB-Jackal-World"></a>
+    <a href="https://github.com/Marius-Juston/UWB-Jackal-World/stargazers">
+        <img alt="Forks" src="https://img.shields.io/github/forks/Marius-Juston/UWB-Jackal-World"></a>
+    <a href="https://img.shields.io/github/forks/Marius-Juston/UWB-Jackal-World">
+        <img alt="Issues" src="https://img.shields.io/github/issues/Marius-Juston/UWB-Jackal-World"></a>
+    <a href="./LICENSE" alt="Activity">
+        <img alt="GitHub" src="https://img.shields.io/github/license/Marius-Juston/UWB-Jackal-World"></a>
+</p>
+
 ## 1. Table of contents
 - [Gazebo Jackal Ultra-wideband Environment](#gazebo-jackal-ultra-wideband-environment)
   - [1. Table of contents](#1-table-of-contents)
