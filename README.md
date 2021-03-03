@@ -65,10 +65,10 @@ To setup:
 9.  `rospack profile`
 10. `catkin_make`
 11. `source ~/catkin_ws/devel/setup.bash`
-   -  This step is very important. Be sure to run this every time you open up a new terminal. If you do not you will get errors when trying to run the world, that you cannot see certain packages.
-   -  To make things easier if you only have a single ROS build and  `catkin_ws`, then you can run: 
-   - `echo "source ~/catkin_ws/devel/setup.bash" > ~/.bashrc`
-   -  This will allow you to not have to run the source command every time.
+    - This step is very important. Be sure to run this every time you open up a new terminal. If you do not you will get errors when trying to run the world, that you cannot see certain packages.
+    - To make things easier if you only have a single ROS build and  `catkin_ws`, then you can run: 
+    - `echo "source ~/catkin_ws/devel/setup.bash" > ~/.bashrc`
+    - This will allow you to not have to run the source command every time.
 
 
 ## 4. Launch
