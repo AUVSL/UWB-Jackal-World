@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="Jackal">
+    <xacro:include filename="$(find jackal_world)/urdf/custom_jackal.urdf.xacro" />
+
+
+    <link name="uwb_anchor10">
+        <inertial>
+            <mass value="0.1" />
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+        </inertial>
+
+        <collision>
+            <origin xyz="0 -0.013 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.05 0.026 0.102"/>
+            </geometry>
+        </collision>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://jackal_world/models/DecaWave/meshes/Decawave.stl"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="uwb_anchor_joint" type="fixed">
+        <origin xyz="0 0 0.25" rpy="0 0 1.57079632679"/>
+        <parent link="base_link"/>
+        <child link="uwb_anchor10"/>
+    </joint>
+
+    <gazebo reference="uwb_anchor_joint">
+        <preserveFixedJoint>true</preserveFixedJoint>
+    </gazebo>
+
+    <gazebo reference="uwb_anchor10">
+        <material>Gazebo/White</material>
+    </gazebo>
+
+</robot>
