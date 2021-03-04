@@ -57,7 +57,7 @@ To setup:
    - For more detailed instuctions on the Jackal API: https://www.clearpathrobotics.com/assets/guides/melodic/jackal/simulation.html
 4. Create a `gtec` folder in your `catkin_ws/src` folder
 5. Navigate to your `catkin_ws/src/gtec` folder
-6. `git clone https://github.com/valentinbarral/gazebosensorplugins.git`
+6. `git clone https://github.com/Marius-Juston/gazebosensorplugins.git`
    - This installs the UWB plugin library which allows for the tags and anchors to send values
 7. `git clone https://github.com/valentinbarral/rosmsgs`
    - This installs the custom UWB ranging messages
