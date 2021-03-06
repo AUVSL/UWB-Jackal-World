@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="Jackal">
-    <xacro:include filename="$(find jackal_description)/urdf/jackal.urdf.xacro" />
+    <xacro:include filename="$(find jackal_world)/urdf/jackal/jackal.urdf.xacro" />
     
     <xacro:arg name="right_id" default="0" />
     <xacro:arg name="left_id" default="1" />
