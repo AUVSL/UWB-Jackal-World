@@ -36,5 +36,8 @@
     <arg name="yaw" value="0" />
     <arg name="config" value="$(arg config)" />
     <arg name="joystick" value="$(arg joystick)" />
+
+    <arg name="right_id" value="0" />
+    <arg name="left_id" value="1" />
   </include>
 </launch>

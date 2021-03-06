@@ -1,6 +1,12 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="Jackal">
     <xacro:include filename="$(find jackal_description)/urdf/jackal.urdf.xacro" />
+    
+    <xacro:arg name="right_id" default="0" />
+    <xacro:arg name="left_id" default="1" />
+
+    <xacro:property name="right" value="$(arg right_id)" />
+    <xacro:property name="left" value="$(arg left_id)" />
 
     <link name="right_tag">
         <inertial>
@@ -83,7 +89,7 @@
             <rx_gain>2</rx_gain>
             <tag_link>right_tag</tag_link>
             <anchor_prefix>uwb_anchor</anchor_prefix>
-            <tag_id>0</tag_id>
+            <tag_id>${right}</tag_id>
             <noise type='gaussian'>
                 <mean>0</mean>
                 <stddev>0.0208</stddev>
@@ -99,7 +105,7 @@
             <rx_gain>2</rx_gain>
             <tag_link>left_tag</tag_link>
             <anchor_prefix>uwb_anchor</anchor_prefix>
-            <tag_id>1</tag_id>
+            <tag_id>${left}</tag_id>
             <noise type='gaussian'>
                 <mean>0</mean>
                 <stddev>0.0208</stddev>

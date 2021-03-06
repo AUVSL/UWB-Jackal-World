@@ -5,6 +5,9 @@
   <arg name="yaw" default="0" />
   <arg name="joystick" default="true" />
 
+  <arg name="right_id" default="0" />
+  <arg name="left_id" default="1" />
+
   <!-- Configuration of Jackal which you would like to simulate.
        See jackal_description for details. -->
   <arg name="config" default="base" />
@@ -12,6 +15,9 @@
   <!-- Load Jackal's description, controllers, and teleop nodes. -->
   <include file="$(find jackal_world)/launch/description.launch">
     <arg name="config" value="$(arg config)" />
+
+    <arg name="right_id" value="$(arg right_id)" />
+    <arg name="left_id" value="$(arg left_id)" />
   </include>
   <include file="$(find jackal_control)/launch/control.launch" />
   <include file="$(find jackal_control)/launch/teleop.launch">
