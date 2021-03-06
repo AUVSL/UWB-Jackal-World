@@ -1,0 +1,6 @@
+<launch>
+  <include file="$(find jackal_world)/launch/multi_jackal_empty_world.launch">
+    <arg name="world_name" value="$(find jackal_world)/worlds/simple_world.world"/>
+    <arg name="joystick" value="false"/>
+  </include>
+</launch>
