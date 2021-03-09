@@ -27,8 +27,8 @@
       <!-- <robotNamespace>/</robotNamespace> -->
       <bodyName>navsat_link</bodyName>
       <frameId>base_link</frameId>
-      <topicName>/navsat/fix</topicName>
-      <velocityTopicName>/navsat/vel</velocityTopicName>
+      <topicName>navsat/fix</topicName>
+      <velocityTopicName>navsat/vel</velocityTopicName>
       <referenceLatitude>49.9</referenceLatitude>
       <referenceLongitude>8.9</referenceLongitude>
       <referenceHeading>0</referenceHeading>
