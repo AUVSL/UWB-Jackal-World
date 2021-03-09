@@ -8,6 +8,7 @@
   <arg name="right_id" default="0" />
   <arg name="left_id" default="1" />
   <arg name="anchor_id" default="-1" />
+  <arg name="ns" default="" />
 
   <arg name="robot_name" default="jackal"/>
 
@@ -32,5 +33,6 @@
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
               args="-urdf -model $(arg robot_name) -param robot_description -x $(arg x) -y $(arg y) -z $(arg z) -R 0 -P 0 -Y $(arg yaw)" />
 
-  <node pkg="tf" type="static_transform_publisher" name="odom_world" args="0 0 0 0 0 0 /world /odom 1000"/>
+  <node pkg="tf" type="static_transform_publisher" name="odom_world" args="0 0 0 0 0 0 /world $(arg ns)/odom 1000"/>
+  <node pkg="tf" type="static_transform_publisher" name="base_link_odom" args="0 0 0 0 0 0 $(arg ns)/odom $(arg ns)/base_link 1000"/>
 </launch>

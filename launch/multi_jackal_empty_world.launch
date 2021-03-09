@@ -45,6 +45,7 @@
             <arg name="anchor_id" value="10" />
 
             <arg name="robot_name"  value="Jacakl1" />
+            <arg name="ns" default="Jackal1" />
         </include>
     </group>
 
@@ -66,6 +67,7 @@
             <arg name="anchor_id" value="11" />
 
             <arg name="robot_name"  value="Jacakl2" />
+            <arg name="ns" default="Jackal2" />
         </include>
     </group>
 
