@@ -24,7 +24,10 @@
     <arg name="left_id" value="$(arg left_id)" />
     <arg name="anchor_id" value="$(arg anchor_id)" />
   </include>
-  <include file="$(find jackal_control)/launch/control.launch" />
+  <include file="$(find jackal_world)/launch/control/control.launch">
+    <arg name="ns" default="$(arg ns)" />
+  </include>
+  <!-- <include file="$(find jackal_control)/launch/control.launch"/> -->
   <include file="$(find jackal_control)/launch/teleop.launch">
     <arg name="joystick" value="$(arg joystick)" />
   </include>
