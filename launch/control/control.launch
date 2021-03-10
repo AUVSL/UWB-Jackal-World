@@ -12,7 +12,8 @@
     <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization">
       <!-- <rosparam command="load" file="$(find jackal_world)/config/robot_localization.yaml" subst_value="true" ns="$(arg ns)"/> -->
       <!-- <rosparam command="load" file="$(find jackal_world)/config/robot_localization.yaml" subst_value="true"/> -->
-      <rosparam command="load" file="$(find jackal_control)/config/robot_localization.yaml"/>
+      <rosparam command="load" file="$(find jackal_world)/config/robot_localization.yaml"/>
+      <!-- <rosparam command="load" file="$(find jackal_control)/config/robot_localization.yaml"/> -->
     </node>
   </group>
 
