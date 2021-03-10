@@ -29,7 +29,7 @@
   </include>
 
     <group ns="Jackal1">
-        <param name="tf_prefix" value="Jackal1" />
+        <!-- <param name="tf_prefix" value="Jackal1" /> -->
 
         <!-- Spawn Jackal -->
         <include file="$(find jackal_world)/launch/spawn_jackal_with_beacon_and_anchor.launch">
@@ -51,7 +51,7 @@
 
 
     <group ns="Jackal2">
-        <param name="tf_prefix" value="Jackal2" />
+        <!-- <param name="tf_prefix" value="Jackal2" /> -->
 
         <!-- Spawn Jackal -->
         <include file="$(find jackal_world)/launch/spawn_jackal_with_beacon_and_anchor.launch">
