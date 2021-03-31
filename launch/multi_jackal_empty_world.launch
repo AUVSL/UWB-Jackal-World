@@ -32,7 +32,7 @@
         <!-- <param name="tf_prefix" value="Jackal1" /> -->
 
         <!-- Spawn Jackal -->
-        <include file="$(find jackal_world)/launch/spawn_jackal_with_beacon_and_anchor.launch">
+        <include file="$(find jackal_world)/launch/spawners/spawn_jackal_with_beacon_and_anchor.launch">
             <arg name="x" value="0" />
             <arg name="y" value="0" />
             <arg name="z" value="1.0" />
@@ -54,7 +54,7 @@
         <!-- <param name="tf_prefix" value="Jackal2" /> -->
 
         <!-- Spawn Jackal -->
-        <include file="$(find jackal_world)/launch/spawn_jackal_with_beacon_and_anchor.launch">
+        <include file="$(find jackal_world)/launch/spawners/spawn_jackal_with_beacon_and_anchor.launch">
             <arg name="x" value="5" />
             <arg name="y" value="5" />
             <arg name="z" value="1.0" />
