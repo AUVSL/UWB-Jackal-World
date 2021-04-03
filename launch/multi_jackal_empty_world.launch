@@ -28,48 +28,36 @@
     <arg name="world_name" value="$(arg world_name)" />
   </include>
 
-    <group ns="Jackal1">
-        <!-- <param name="tf_prefix" value="Jackal1" /> -->
+    <include file="$(find jackal_world)/launch/spawners/spawn_jackal_with_beacon_and_anchor.launch">
+        <arg name="x" value="0" />
+        <arg name="y" value="0" />
+        <arg name="z" value="1.0" />
+        <arg name="yaw" value="0" />
+        <arg name="config" value="$(arg config)" />
+        <arg name="joystick" value="$(arg joystick)" />
 
-        <!-- Spawn Jackal -->
-        <include file="$(find jackal_world)/launch/spawners/spawn_jackal_with_beacon_and_anchor.launch">
-            <arg name="x" value="0" />
-            <arg name="y" value="0" />
-            <arg name="z" value="1.0" />
-            <arg name="yaw" value="0" />
-            <arg name="config" value="$(arg config)" />
-            <arg name="joystick" value="$(arg joystick)" />
+        <arg name="right_id" value="0" />
+        <arg name="left_id" value="1" />
+        <arg name="anchor_id" value="10" />
 
-            <arg name="right_id" value="0" />
-            <arg name="left_id" value="1" />
-            <arg name="anchor_id" value="10" />
-
-            <arg name="robot_name"  value="Jacakl1" />
-            <arg name="ns" default="Jackal1" />
-        </include>
-    </group>
+        <arg name="robot_name"  value="Jacakl1" />
+        <arg name="ns" default="Jackal1" />
+    </include>
 
 
-    <group ns="Jackal2">
-        <!-- <param name="tf_prefix" value="Jackal2" /> -->
+    <include file="$(find jackal_world)/launch/spawners/spawn_jackal_with_beacon_and_anchor.launch">
+        <arg name="x" value="5" />
+        <arg name="y" value="5" />
+        <arg name="z" value="1.0" />
+        <arg name="yaw" value="0" />
+        <arg name="config" value="$(arg config)" />
+        <arg name="joystick" value="$(arg joystick)" />
 
-        <!-- Spawn Jackal -->
-        <include file="$(find jackal_world)/launch/spawners/spawn_jackal_with_beacon_and_anchor.launch">
-            <arg name="x" value="5" />
-            <arg name="y" value="5" />
-            <arg name="z" value="1.0" />
-            <arg name="yaw" value="0" />
-            <arg name="config" value="$(arg config)" />
-            <arg name="joystick" value="$(arg joystick)" />
+        <arg name="right_id" value="2" />
+        <arg name="left_id" value="3" />
+        <arg name="anchor_id" value="11" />
 
-            <arg name="right_id" value="2" />
-            <arg name="left_id" value="3" />
-            <arg name="anchor_id" value="11" />
-
-            <arg name="robot_name"  value="Jacakl2" />
-            <arg name="ns" default="Jackal2" />
-        </include>
-    </group>
-
-
+        <arg name="robot_name"  value="Jacakl2" />
+        <arg name="ns" default="Jackal2" />
+    </include>
 </launch>
