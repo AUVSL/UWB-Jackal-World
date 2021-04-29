@@ -139,11 +139,11 @@ roslaunch jackal_world scenarioRoom.launch
 
 To launch a Gazebo world with the 2 Jackals and the stationary anchors defined as drones. 
 The drones will move from one location to other and the jackals will also move towards them.
-In order to use this scenario though you need to install: [`https://github.com/tahsinkose/sjtu-drone`](https://github.com/tahsinkose/sjtu-drone)
+In order to use this scenario though you need to install: [`https://github.com/Marius-Juston/sjtu-drone`](https://github.com/Marius-Juston/sjtu-drone)
 
 In order to do this:
 1. `cd <catkin_ws>/src`
-2. `git clone https://github.com/tahsinkose/sjtu-drone.git`
+2. `git clone https://github.com/Marius-Juston/sjtu-drone.git`
 3. `cd <catkin_ws>`
 4. `catkin_make`
    - In the case you get a `#include "ui_DialogKeyboard.h"` compile error
