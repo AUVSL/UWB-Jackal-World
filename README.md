@@ -145,7 +145,13 @@ In order to do this:
 1. `cd <catkin_ws>/src`
 2. `git clone https://github.com/tahsinkose/sjtu-drone.git`
 3. `cd <catkin_ws>`
-4. `catkin build`
+4. `catkin_make`
+   - In the case you get a `#include "ui_DialogKeyboard.h"` compile error
+   - Navigate to the `sjtu-drone` directory (i.e `roscd sjtu-drone`)
+   - Navigate to the `src` folder
+   - Edit the `DialogKeyboard.cpp` file and add above the `#include "ui_DialogKeyboard.h"` statement a blank line.
+   - Save changes and rerun the `catkin_make`
+   - (The known issue is posted here: https://github.com/tahsinkose/sjtu-drone/issues/6)
 
 
 ![Scenario Drone Mobile](/images/scenarioDroneMobile.png)
