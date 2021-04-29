@@ -1,0 +1,15 @@
+<launch>
+    <arg name="ns" default="Drone" />
+    <arg name="robot_name" default="drone"/>
+    <arg name="anchor_id" default="100"/>
+
+   <!-- send robot urdf to param server -->
+    <param name="robot_description"
+         command="$(find xacro)/xacro $(find jackal_world)/urdf/custom_sjtu_drone.urdf.xacro anchor_id:=$(arg anchor_id)" />
+
+  <!-- push robot_description to factory and spawn robot in gazebo at the origin, change x,y,z arguments to spawn in a different position -->
+  <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model $(arg robot_name) -x 0 -y 0 -z 0"
+    respawn="false" output="screen" />
+
+    <!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" /> -->
+</launch>
