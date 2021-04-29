@@ -152,6 +152,9 @@ In order to do this:
    - Edit the `DialogKeyboard.cpp` file and add above the `#include "ui_DialogKeyboard.h"` statement and add a blank line.
    - Save changes and rerun the `catkin_make`
    - (The known issue is posted here: https://github.com/tahsinkose/sjtu-drone/issues/6)
+5. Also make sure that you have Qt5 installed, in order to run the drone teleop GUI
+    - `sudo apt-get install qt5-default`
+    - https://wiki.qt.io/Install_Qt_5_on_Ubuntu
 
 
 ![Scenario Drone Mobile](/images/scenarioDroneMobile.png)
