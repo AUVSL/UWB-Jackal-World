@@ -25,6 +25,10 @@
   - [4. Launch](#4-launch)
     - [4.1. Jackal Only](#41-jackal-only)
     - [4.2. Stationary world](#42-stationary-world)
+    - [4.3. Scenario 1](#43-scenario-1)
+    - [4.4. Scenario 2](#44-scenario-2)
+    - [4.5. Scenario Room](#45-scenario-room)
+    - [4.6. Scenario Drone and Mobile](#46-scenario-drone-and-mobile)
 
 
 ## 2. Project Description
@@ -90,4 +94,63 @@ To launch a Gazebo world with the Jackal and the stationary anchors:
 ```bash
 
 roslaunch jackal_world gazebo_world_launcher.launch
+```
+
+### 4.3. Scenario 1
+
+To launch a Gazebo world with the Jackal and the stationary anchors:
+
+![Scenario 1](/images/scenario1.png)
+
+```bash
+
+roslaunch jackal_world scenario1.launch
+```
+
+
+### 4.4. Scenario 2
+
+To launch a Gazebo world with the 2 Jackals and the stationary anchors.
+In this scenario one of the Jackals is able to localize itself using the stationary anchors only,
+while the other Jackal must first wait for the other one to be localized and then localize,
+itself from it:
+
+![Scenario 2](/images/scenario2.png)
+
+```bash
+
+roslaunch jackal_world scenario2.launch
+```
+
+
+### 4.5. Scenario Room
+
+To launch a Gazebo world with the 2 Jackals and the stationary anchors in a complex terrain:
+
+
+![Scenario Room](/images/scenarioRoom.png)
+
+```bash
+
+roslaunch jackal_world scenarioRoom.launch
+```
+
+### 4.6. Scenario Drone and Mobile
+
+To launch a Gazebo world with the 2 Jackals and the stationary anchors defined as drones. 
+The drones will move from one location to other and the jackals will also move towards them.
+In order to use this scenario though you need to install: [`https://github.com/tahsinkose/sjtu-drone`](https://github.com/tahsinkose/sjtu-drone)
+
+In order to do this:
+1. `cd <catkin_ws>/src`
+2. `git clone https://github.com/tahsinkose/sjtu-drone.git`
+3. `cd <catkin_ws>`
+4. `catkin build`
+
+
+![Scenario Drone Mobile](/images/scenarioDroneMobile.png)
+
+```bash
+
+roslaunch jackal_world scenarioDroneMobile.launch
 ```
