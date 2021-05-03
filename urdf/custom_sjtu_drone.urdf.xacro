@@ -1,7 +1,10 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="sjut_drone">
-      <xacro:arg name="anchor_id" default="-1" />
-    <xacro:property name="anchor" value="$(arg anchor_id)" />
+  <xacro:arg name="anchor_id" default="-1" />
+  <xacro:property name="anchor" value="$(arg anchor_id)" />
+
+  <xacro:arg name="ns" default="/" />
+  <xacro:property name="ns" value="$(arg ns)"/>
 
 
   <link name="base_link">
@@ -27,6 +30,7 @@
     <plugin name='simple_drone' filename='libplugin_drone.so'>
         <bodyName>base_link</bodyName>
         <imuTopic>/drone/imu</imuTopic>
+        <robotNamespace>${ns}</robotNamespace>
         <rollpitchProportionalGain>10.0</rollpitchProportionalGain>
         <rollpitchDifferentialGain>5.0</rollpitchDifferentialGain>
         <rollpitchLimit>0.5</rollpitchLimit>
@@ -89,9 +93,11 @@
   </gazebo>
 
   <!-- Sensors -->
-  <!-- <gazebo>
+  <gazebo>
     	<sensor name='sensor_imu' type='imu'>
         <always_on> 1 </always_on>
+        <robotNamespace>${ns}</robotNamespace>
+        <topicName>drone/imu</topicName>
         <update_rate> 100 </update_rate>
         <pose> 0 0 0 0 0 0 </pose>
         <plugin name='ros_imu' filename='libplugin_ros_imu.so'>
@@ -109,7 +115,8 @@
             </accel>
           </noise>
         </imu>
-      </sensor> -->
+      </sensor>
+    </gazebo>
 
 
       <!-- Sonar sensor in 100fps -->
