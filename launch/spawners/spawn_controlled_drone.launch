@@ -1,22 +1,27 @@
 <launch>
     <arg name="ns" default="drone2" />
-    <arg name="robot_name" default="$(arg ns)"/>
     <arg name="anchor_id" default="100"/>
 
     <arg name="x" default="0" />
     <arg name="y" default="0" />
     <arg name="z" default="0" />
 
-    <group ns="$(arg ns)">
+    <arg name="model" default="$(find hector_quadrotor_description)/urdf/quadrotor.gazebo.xacro" />
 
-      <!-- send robot urdf to param server -->
-      <param name="robot_description"
-        command="$(find xacro)/xacro $(find jackal_world)/urdf/custom_sjtu_drone.urdf.xacro anchor_id:=$(arg anchor_id) ns:=$(arg ns)" />
 
-      <!-- push robot_description to factory and spawn robot in gazebo at the origin, change x,y,z arguments to spawn in a different position -->
-      <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model $(arg robot_name) -x $(arg x) -y $(arg y) -z $(arg z)"
-        respawn="false" output="screen" />
+  <group ns="$(arg ns)">
+      <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+       <arg name="name" value="$(arg ns)" />
+       <arg name="tf_prefix" value="$(arg ns)" />
+       <arg name="model" value="$(arg model)" />
+       <arg name="x" value="$(arg x)" />
+       <arg name="y" value="$(arg y)" />
+       <arg name="z" value="$(arg z)" />
+     </include>
 
-      <node name="keyboard$(arg ns)" pkg="sjtu_drone" type="drone_keyboard" output="screen" args="$(arg ns)"/>
+     <node name="teleop_twist_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen">
+        <!-- <remap from="cmd_vel" to="$(arg ns)/cmd_vel" /> -->
+     </node>
+
   </group>
 </launch>
