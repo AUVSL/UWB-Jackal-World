@@ -6,7 +6,7 @@
     <arg name="y" default="0" />
     <arg name="z" default="0" />
 
-    <arg name="model" default="$(find hector_quadrotor_description)/urdf/quadrotor.gazebo.xacro" />
+    <arg name="model" default="$(find jackal_world)/urdf/custom_hector_drone.gazebo.xacro" />
 
 
   <group ns="$(arg ns)">
