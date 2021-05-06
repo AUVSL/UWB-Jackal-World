@@ -5,6 +5,7 @@
     <arg name="x" default="0" />
     <arg name="y" default="0" />
     <arg name="z" default="0" />
+    <arg name="yaw" default="0" />
     <arg name="keyboard" default="0" />
 
     <arg name="model" default="$(find jackal_world)/urdf/custom_hector_drone.gazebo.xacro" />
@@ -18,6 +19,7 @@
        <arg name="x" value="$(arg x)" />
        <arg name="y" value="$(arg y)" />
        <arg name="z" value="$(arg z)" />
+       <arg name="yaw" value="$(arg yaw)" />
        <arg name="other_urdf_parameters" value="anchor_id:=$(arg anchor_id)"/>
      </include>
 
