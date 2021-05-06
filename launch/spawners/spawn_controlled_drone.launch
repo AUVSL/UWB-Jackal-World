@@ -5,6 +5,7 @@
     <arg name="x" default="0" />
     <arg name="y" default="0" />
     <arg name="z" default="0" />
+    <arg name="keyboard" default="0" />
 
     <arg name="model" default="$(find jackal_world)/urdf/custom_hector_drone.gazebo.xacro" />
 
@@ -20,9 +21,9 @@
        <arg name="other_urdf_parameters" value="anchor_id:=$(arg anchor_id)"/>
      </include>
 
-     <node name="teleop_twist_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen">
-        <!-- <remap from="cmd_vel" to="$(arg ns)/cmd_vel" /> -->
-     </node>
-
+    <group if="$(eval arg('keyboard') == 1)">
+      <node name="teleop_twist_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen">
+      </node>
+     </group>
   </group>
 </launch>
