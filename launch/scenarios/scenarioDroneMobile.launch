@@ -60,4 +60,30 @@
         <arg name="robot_name"  value="Jacakl2" />
         <arg name="ns" default="Jackal2" />
     </include>
+
+
+    <include file="$(find jackal_world)/launch/spawners/spawn_controlled_drone.launch">
+        <arg name="x" value="-5" />
+        <arg name="y" value="-10" />
+        <arg name="yaw" value="1.57079632679" />
+        <arg name="anchor_id" value="-1" />
+        <arg name="ns" default="drone1" />
+    </include>
+
+    <include file="$(find jackal_world)/launch/spawners/spawn_controlled_drone.launch">
+        <arg name="x" value="0" />
+        <arg name="y" value="-7" />
+        <arg name="yaw" value="1.57079632679" />
+        <arg name="anchor_id" value="-2" />
+        <arg name="ns" default="drone2" />
+    </include>
+
+
+    <include file="$(find jackal_world)/launch/spawners/spawn_controlled_drone.launch">
+        <arg name="x" value="4" />
+        <arg name="y" value="-10" />
+        <arg name="yaw" value="1.57079632679" />
+        <arg name="anchor_id" value="-3" />
+        <arg name="ns" default="drone3" />
+    </include>
 </launch>
