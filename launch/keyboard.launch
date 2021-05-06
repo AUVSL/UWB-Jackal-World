@@ -1,0 +1,7 @@
+<launch>
+    <arg name="ns" default="drone2" />
+
+  <group ns="$(arg ns)">
+      <node name="teleop_twist_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen" />
+  </group>
+</launch>
