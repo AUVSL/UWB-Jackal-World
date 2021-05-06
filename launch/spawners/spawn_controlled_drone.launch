@@ -17,6 +17,7 @@
        <arg name="x" value="$(arg x)" />
        <arg name="y" value="$(arg y)" />
        <arg name="z" value="$(arg z)" />
+       <arg name="other_urdf_parameters" value="anchor_id:=$(arg anchor_id)"/>
      </include>
 
      <node name="teleop_twist_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen">
