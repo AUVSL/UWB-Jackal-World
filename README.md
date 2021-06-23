@@ -29,6 +29,8 @@
     - [4.4. Scenario 2](#44-scenario-2)
     - [4.5. Scenario Room](#45-scenario-room)
     - [4.6. Scenario Drone and Mobile](#46-scenario-drone-and-mobile)
+  - [5. Known Issues](#5-known-issues)
+    -  [5.1. No model found](#51-no-model-found)
 
 
 ## 2. Project Description
@@ -156,8 +158,8 @@ In order to do this:
 roslaunch jackal_world scenarioDroneMobile.launch
 ```
 
-## 5 Known Issues
+## 5. Known Issues
 
-### 5.1 No model found
+### 5.1. No model found
 
 When installing if you have issues opening the worlds due to models not existing. Please unzip `models.zip` and place it into your `~/.gazebo/models`
