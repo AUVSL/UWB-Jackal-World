@@ -162,4 +162,4 @@ roslaunch jackal_world scenarioDroneMobile.launch
 
 ### 5.1. No model found
 
-When installing if you have issues opening the worlds due to models not existing. Please unzip `models.zip` and place it into your `~/.gazebo/models`
+When installing if you have issues opening the worlds due to models not existing. Please unzip [`models.zip`](models.zip) and place it into your `~/.gazebo/models`
