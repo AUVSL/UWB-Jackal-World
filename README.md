@@ -57,13 +57,13 @@ This project uses [`ROS Melodic`](http://wiki.ros.org/melodic) as its ROS backen
 To setup:
 
 1. Either create a catkin workspace or navigate to the `src` folder
-2. ```git clone git@github.com:Marius-Juston/UWB-Jackal-World.git```
+2. ```git clone https://github.com/AUVSL/UWB-Jackal-World.git```
 3. `sudo apt-get install ros-melodic-jackal-simulator ros-melodic-jackal-desktop ros-melodic-jackal-navigation`
    - This will install all the necessary melodic packages for the Jackal as well as its base model
    - For more detailed instuctions on the Jackal API: https://www.clearpathrobotics.com/assets/guides/melodic/jackal/simulation.html
 4. Create a `gtec` folder in your `catkin_ws/src` folder
 5. Navigate to your `catkin_ws/src/gtec` folder
-6. `git clone https://github.com/Marius-Juston/gazebosensorplugins.git`
+6. `git clone https://github.com/AUVSL/UWB-Gazebo-Plugin.git`
    - This installs the UWB plugin library which allows for the tags and anchors to send values
 7. `git clone https://github.com/valentinbarral/rosmsgs`
    - This installs the custom UWB ranging messages
@@ -141,11 +141,11 @@ roslaunch jackal_world scenarioRoom.launch
 
 To launch a Gazebo world with the 2 Jackals and the stationary anchors defined as drones. 
 The drones will move from one location to other and the jackals will also move towards them.
-In order to use this scenario though you need to install: [`https://github.com/Marius-Juston/Hector-Quadrotor`](https://github.com/Marius-Juston/Hector-Quadrotor)
+In order to use this scenario though you need to install: [`https://github.com/AUVSL/Hector-Quadrotor`](https://github.com/AUVSL/Hector-Quadrotor)
 
 In order to do this:
 1. `cd <catkin_ws>/src`
-2. `git clone https://github.com/Marius-Juston/Hector-Quadrotor.git`
+2. `git clone https://github.com/AUVSL/Hector-Quadrotor.git`
 3. `cd <catkin_ws>`
 4. `catkin_make`
 5. Also make sure that you have teleop_twist_keyboard installed, in order to run the drone teleop GUI
