@@ -65,7 +65,7 @@ To setup:
 5. Navigate to your `catkin_ws/src/gtec` folder
 6. `git clone https://github.com/AUVSL/UWB-Gazebo-Plugin.git`
    - This installs the UWB plugin library which allows for the tags and anchors to send values
-7. `git clone https://github.com/valentinbarral/rosmsgs`
+7. `git clone https://github.com/AUVSL/rosmsgs`
    - This installs the custom UWB ranging messages
 8. Navigate to your base `cakin_ws` folder
 9.  `rospack profile`
