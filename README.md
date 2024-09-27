@@ -67,7 +67,7 @@ To setup:
    - This installs the UWB plugin library which allows for the tags and anchors to send values
 7. `git clone https://github.com/AUVSL/rosmsgs`
    - This installs the custom UWB ranging messages
-8. Navigate to your base `cakin_ws` folder
+8. Navigate to your base `catkin_ws` folder
 9.  `rospack profile`
 10. `catkin_make`
 11. `source ~/catkin_ws/devel/setup.bash`
